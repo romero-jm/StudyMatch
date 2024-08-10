@@ -1,2 +1,7 @@
 12313726,John Mark Romero,CALENG2,Work Problems,Messenger,John Mark Dela Cruz,jm.jpg
 12313262,Derrick Matthew Sunglao,LBYCPEI,Module7: GUI,Messenger,Derrick Matthew Sunglao,derrick.jpg
+12311596,Mero Naganohara,CALENG2,Work Problems,Telegram,@mcl_rdbl,mero.jpg
+12311618,Jhon Blaze,LBYCPA1,Coding Problem,Twitter,@JCBlaze63,jc.jpg
+12311626,Choi Eu-Ri,LBYEC2A,C++ Basics,iMessage,090000000,euri.jpg
+12311634,Azula Roselei,LBYCPEI,Module7: Final Report,Messenger,Azula,azula.jpg
+12311642,Akira Shinozaki,CALENG2,Advance Study,gmail,akira_shinozaki@dlsu.edu.ph,akira.jpg
