@@ -12,23 +12,24 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class HelloController {
     @FXML
-    public TextField studentName;
+    public TextField studentNameField;
     @FXML
-    public TextField courseCode;
+    public TextField CourseCodeField;
     @FXML
-    public TextField idNum;
+    public TextField IDNumberField;
     @FXML
-    public TextField lesson;
-
+    public TextField LessonField;
+    @FXML
+    public TextField ModeField;
+    @FXML
+    public TextField ContactField;
 
     private Scene scene;
     private Stage stage;
@@ -47,23 +48,40 @@ public class HelloController {
         switchScene(event, "login-view.fxml");
     }
 
-    private String getIdNum() {
-        return idNum.getText().trim();
+    public String getIdNum() {
+        return IDNumberField.getText().trim();
     }
 
-    private String getCourseCode() {
-        return courseCode.getText().trim();
+    public String getCourseCode() {
+        return CourseCodeField.getText().trim();
     }
 
-    private String getStudentName() {
-        return studentName.getText().trim();
+    public String getStudentName() {
+        return studentNameField.getText();
     }
 
-    private String getLesson() {
-        return lesson.getText().trim();
+    public String getLesson() {
+        return LessonField.getText().trim();
     }
 
+    public String getContactField() {
+        return ContactField.getText().trim();
+    }
 
+    public String getModeField() {
+        return ModeField.getText().trim();
+    }
 
+    @FXML
+    private void enlist(ActionEvent event) throws IOException {
+        String filePath = "out.txt"; // Path to your file
+        String content = getIdNum()+","+getStudentName()+","+getCourseCode()+","+getLesson()+","+getModeField()+","+getContactField();
 
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            writer.write(content);
+            System.out.println("File written successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -38,7 +38,7 @@
       <ButtonBar layoutX="486.0" layoutY="264.0" prefHeight="40.0" prefWidth="181.0">
          <buttons>
             <Button mnemonicParsing="false" onAction="#switchToLoginView" text="Find" />
-            <Button fx:id="EnlistButton" mnemonicParsing="false" text="Enlist" />
+            <Button fx:id="EnlistButton" mnemonicParsing="false" onAction="#enlist" text="Enlist" />
          </buttons>
       </ButtonBar>
       <Label fx:id="Message" layoutX="44.0" layoutY="275.0" text="Welcome to DLSU StudyMatch!" />
