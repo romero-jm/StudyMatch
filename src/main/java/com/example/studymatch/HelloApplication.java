@@ -19,9 +19,9 @@ public class HelloApplication extends Application {
 
 
         Users users = new Users();
-        users.loadFile("src/main/resources/assets/data");
+        users.loadFile("src/main/resources/database.txt");
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 520, 380);
+        Scene scene = new Scene(fxmlLoader.load(), 680, 370);
         stage.setScene(scene);
         stage.show();
     }
