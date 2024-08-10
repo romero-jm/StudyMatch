@@ -5,6 +5,8 @@ public class User {
     String IDNum;
     String courseID;
     String lesson;
+    String contact;
+    String mode;
 
     public User(String name, String IDNum, String courseID, String lesson) {
         this.name = name;
@@ -43,5 +45,21 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }
