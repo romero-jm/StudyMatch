@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Users {
     public ArrayList<User> users = new ArrayList<>();
 
-    public final int IDNUM = 0, NAME = 1, CODE = 2, LESSON = 3, MODE = 4, CONTACT = 5;
+    public final int IDNUM = 0, NAME = 1, CODE = 2, LESSON = 3, MODE = 4, CONTACT = 5, IMAGE = 6;
     public void loadFile(String filename) {
         try {
             FileReader fileReader = new FileReader(filename);
@@ -23,8 +23,9 @@ public class Users {
                 String lesson = details[LESSON];
                 String mode = details[MODE];
                 String contact = details[CONTACT];
+                String image = details[IMAGE];
 
-                User user = new User(iDNum, name, code, lesson, mode, contact);
+                User user = new User(iDNum, name, code, lesson, mode, contact, image);
                 users.add(user);
             }
             text.close();
