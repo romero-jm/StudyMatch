@@ -24,7 +24,7 @@ public class Users {
                 String mode = details[MODE];
                 String contact = details[CONTACT];
 
-                User user = new User(iDNum, name, code, lesson);
+                User user = new User(iDNum, name, code, lesson, mode, contact);
                 users.add(user);
             }
             text.close();

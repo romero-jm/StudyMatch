@@ -8,11 +8,13 @@ public class User {
     String contact;
     String mode;
 
-    public User(String name, String IDNum, String courseID, String lesson) {
+    public User(String name, String IDNum, String courseID, String lesson, String mode, String contact) {
         this.name = name;
         this.IDNum = IDNum;
         this.courseID = courseID;
         this.lesson = lesson;
+        this.mode = mode;
+        this.contact = contact;
     }
 
     public String getLesson() {
