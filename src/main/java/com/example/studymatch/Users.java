@@ -8,6 +8,14 @@ import java.util.Scanner;
 public class Users {
     public ArrayList<User> users = new ArrayList<>();
 
+    public ArrayList<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(ArrayList<User> users) {
+        this.users = users;
+    }
+
     public final int IDNUM = 0, NAME = 1, CODE = 2, LESSON = 3, MODE = 4, CONTACT = 5, IMAGE = 6;
     public void loadFile(String filename) {
         try {
@@ -54,6 +62,16 @@ public class Users {
             }
         }
         return -1;
+    }
+
+    public void addUser(User user) {
+        users.add(user);
+    }
+
+    public void printId() {
+        for (int i = 0; i < users.size(); i++) {
+            System.out.println(users.get(i).getName());
+        }
     }
 }
 
