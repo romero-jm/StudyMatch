@@ -56,39 +56,52 @@ public class HelloController {
         switchScene(event, "login-view.fxml");
     }
 
-    public String getIdNum() {
+    @FXML
+    public void openEnlistedView(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("successfully-enlisted-view.fxml"));
+        Parent root = loader.load();
+
+
+        Stage window = new Stage();
+        window.setTitle("Enlisted");
+        window.setScene(new Scene(root));
+        window.show();
+    }
+
+    private String getIdNum() {
         return IDNumberField.getText().trim();
     }
 
-    public String getCourseCode() {
+    private String getCourseCode() {
         return CourseCodeField.getText().trim();
     }
 
-    public String getStudentName() {
+    private String getStudentName() {
         return studentNameField.getText();
     }
 
-    public String getLesson() {
+    private String getLesson() {
         return LessonField.getText().trim();
     }
 
-    public String getContactField() {
+    private String getContactField() {
         return ContactField.getText().trim();
     }
 
-    public String getModeField() {
+    private String getModeField() {
         return ModeField.getText().trim();
     }
 
     @FXML
     private void enlist(ActionEvent event) throws IOException {
-
         System.out.println("enlisted");
         User user = new User(getIdNum(), getStudentName(), getCourseCode(), getLesson(), getModeField(), getContactField(), "src/main/resources/dlsu.jpg");
-
         users.addUser(user);
         //adding a user here.
         users.printId();//test
+        //need a foolproofer if-else to catch null text fields
+        openEnlistedView(event);
+
 
     }
 }

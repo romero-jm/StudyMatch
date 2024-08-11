@@ -68,6 +68,10 @@ public class Users {
         users.add(user);
     }
 
+    public void removeUser(int index) {
+        users.remove(index);
+    }
+
     public void printId() {
         for (int i = 0; i < users.size(); i++) {
             System.out.println(users.get(i).getName());
