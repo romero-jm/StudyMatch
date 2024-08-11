@@ -15,7 +15,7 @@
       <Text layoutX="15.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter ID" />
       <ButtonBar layoutX="271.0" layoutY="425.0" prefHeight="40.0" prefWidth="339.0">
          <buttons>
-            <Button fx:id="extBtn" mnemonicParsing="false" onAction="#extBtn" text="Exit" />
+            <Button fx:id="extBtn" mnemonicParsing="false" onAction="#onExit" text="Exit" />
             <Button fx:id="add" mnemonicParsing="false" onAction="#addID" text="Add to list" />
             <Button fx:id="delete" mnemonicParsing="false" onAction="#removeID" text="Delete" />
             <Button fx:id="print" mnemonicParsing="false" onAction="#printout" text="Print List" />
