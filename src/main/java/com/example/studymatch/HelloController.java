@@ -19,10 +19,6 @@ import java.util.Scanner;
 
 public class HelloController {
     Users users = new Users();
-    public HelloController() {
-
-        users.loadFile("src/main/resources/database.txt");
-    }
 
 
     @FXML
@@ -118,7 +114,7 @@ public class HelloController {
     @FXML
     private void enlist(ActionEvent event) throws IOException {
         Message.setText(getStudentName()+" enlisted");
-        User user = new User(getIdNum(), getStudentName(), getCourseCode(), getLesson(), getModeField(), getContactField(), getImageField());
+        User user = new User(getIdNum(), getStudentName(), getCourseCode(), getLesson(), getModeField(), getContactField());
         users.addUser(user);
         users.printId();//test
         openEnlistedView();
