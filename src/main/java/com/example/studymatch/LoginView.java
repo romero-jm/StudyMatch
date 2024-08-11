@@ -119,6 +119,6 @@ public class LoginView implements Initializable,WindowInterface {
     }
     public void printout(ActionEvent event) throws IOException {
         PrintOut.setData(chosenID);
-        switchScene(event,"print-out.fxml");
+        switchScene(event,"print-out.fxml");//test
     }
 }

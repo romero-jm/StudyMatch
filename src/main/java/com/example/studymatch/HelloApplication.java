@@ -19,8 +19,9 @@ public class HelloApplication extends Application {
         user.loadFile("src/main/resources/database.txt");
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 680, 370);
+        stage.setTitle("DLSU StudyMatch");
         stage.setScene(scene);
-        stage.show();
+        stage.show();//test commented
     }
 
     public static void main(String[] args) {

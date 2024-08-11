@@ -123,7 +123,7 @@ public class HelloController {
             Message.setText(getStudentName()+" enlisted");
             User user = new User(getIdNum(), getStudentName(), getCourseCode(), getLesson(), getModeField(), getContactField());
             users.addUser(user);
-            users.printId();//test
+            users.printId();//test commented
 
         }
     }
