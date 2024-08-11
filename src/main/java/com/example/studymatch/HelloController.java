@@ -19,10 +19,6 @@ import java.util.Scanner;
 
 public class HelloController {
     Users users = new Users();
-    public HelloController() {
-
-        users.loadFile("src/main/resources/database.txt");
-    }
 
 
     @FXML
