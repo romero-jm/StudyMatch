@@ -21,7 +21,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 680, 370);
         stage.setTitle("DLSU StudyMatch");
         stage.setScene(scene);
-        stage.show();//test commented
+        stage.show();
     }
 
     public static void main(String[] args) {
