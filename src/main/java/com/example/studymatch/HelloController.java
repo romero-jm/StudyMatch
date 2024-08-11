@@ -37,6 +37,10 @@ public class HelloController {
     public TextField ModeField;
     @FXML
     public TextField ContactField;
+    @FXML
+    public TextField ImageField;
+    @FXML
+    public Label Message;
 
     private Scene scene;
     private Stage stage;
@@ -53,6 +57,7 @@ public class HelloController {
 
     @FXML
     public void switchToLoginView(ActionEvent event) throws IOException {
+        LoginView.setData(getCourseCode());
         switchScene(event, "login-view.fxml");
     }
 
@@ -105,13 +110,17 @@ public class HelloController {
         return ModeField.getText().trim();
     }
 
+    private String getImageField() {
+        return ImageField.getText().trim();
+        // TODO: Create a fail-safe (default) if no image is inputted
+    }
+
     @FXML
     private void enlist(ActionEvent event) throws IOException {
-        System.out.println("enlisted");
-        User user = new User(getIdNum(), getStudentName(), getCourseCode(), getLesson(), getModeField(), getContactField(), "src/main/resources/dlsu.jpg");
+        Message.setText(getStudentName()+" enlisted");
+        User user = new User(getIdNum(), getStudentName(), getCourseCode(), getLesson(), getModeField(), getContactField(), getImageField());
         users.addUser(user);
         users.printId();//test
-        //need a foolproofer if-else to catch empty text fields
         openEnlistedView();
 
 
