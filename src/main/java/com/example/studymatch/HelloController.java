@@ -57,15 +57,28 @@ public class HelloController {
     }
 
     @FXML
-    public void openEnlistedView(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("successfully-enlisted-view.fxml"));
+    public void openPrompt(String displayText) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("display-prompt.fxml"));
         Parent root = loader.load();
 
+        // Get the controller associated with the loaded FXML
+        DisplayPrompt displayPrompt = loader.getController();
+        displayPrompt.setDisplay(displayText);
 
         Stage window = new Stage();
-        window.setTitle("Enlisted");
+        window.setTitle(displayText);
         window.setScene(new Scene(root));
         window.show();
+    }
+
+    @FXML
+    public void openEnlistedView() throws IOException {
+        openPrompt("Successfully Enlisted");
+    }
+
+    @FXML
+    public void openEmptyEnlistedFieldView(ActionEvent event) throws IOException {
+        openPrompt("Some Text Fields are Empty");
     }
 
     private String getIdNum() {
@@ -97,10 +110,9 @@ public class HelloController {
         System.out.println("enlisted");
         User user = new User(getIdNum(), getStudentName(), getCourseCode(), getLesson(), getModeField(), getContactField(), "src/main/resources/dlsu.jpg");
         users.addUser(user);
-        //adding a user here.
         users.printId();//test
-        //need a foolproofer if-else to catch null text fields
-        openEnlistedView(event);
+        //need a foolproofer if-else to catch empty text fields
+        openEnlistedView();
 
 
     }
