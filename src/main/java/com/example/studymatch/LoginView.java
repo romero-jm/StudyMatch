@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class LoginView implements Initializable {
+public class LoginView implements Initializable,WindowInterface {
 
     private static ArrayList<User> listUsers = Users.getUsers();
     static ObservableList<User> selected = FXCollections.observableArrayList();
@@ -72,7 +72,7 @@ public class LoginView implements Initializable {
         System.out.println(selected);
     }
 
-    public void extBtn(ActionEvent event) throws IOException {
+    public void onExit(ActionEvent event) throws IOException {
         MainTable.getItems().clear();
         MainTable.refresh();
         System.out.println(MainTable.getItems());
@@ -81,7 +81,7 @@ public class LoginView implements Initializable {
     }
 
     @FXML
-    private void switchScene(ActionEvent event, String fxmlFile) throws IOException {
+    public void switchScene(ActionEvent event, String fxmlFile) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/studymatch/" + fxmlFile)));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
