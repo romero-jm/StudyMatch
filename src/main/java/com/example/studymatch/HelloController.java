@@ -89,5 +89,6 @@ public class HelloController {
         users.addUser(user);
         //adding a user here.
         users.printId();//test
+
     }
 }

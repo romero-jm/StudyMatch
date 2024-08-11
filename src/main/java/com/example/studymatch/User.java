@@ -1,8 +1,8 @@
 package com.example.studymatch;
 
 public class User {
-    String name;
     String IDNum;
+    String name;
     String courseID;
     String lesson;
     String contact;
@@ -10,8 +10,8 @@ public class User {
     String image;
 
     public User(String name, String IDNum, String courseID, String lesson, String mode, String contact, String image) {
-        this.name = name;
-        this.IDNum = IDNum;
+        this.IDNum = name;
+        this.name = IDNum;
         this.courseID = courseID;
         this.lesson = lesson;
         this.mode = mode;
