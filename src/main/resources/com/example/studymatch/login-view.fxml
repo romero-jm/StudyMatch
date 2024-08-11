@@ -23,7 +23,6 @@
       </ButtonBar>
       <TableView fx:id="MainTable" layoutX="14.0" layoutY="14.0" prefHeight="397.0" prefWidth="778.0">
         <columns>
-          <TableColumn fx:id="profile" prefWidth="75.0" text="Image" />
           <TableColumn fx:id="idNo" prefWidth="75.0" text="ID Number" />
             <TableColumn fx:id="fullname" prefWidth="75.0" text="Name" />
             <TableColumn fx:id="coursecode" prefWidth="75.0" text="Course Code" />
