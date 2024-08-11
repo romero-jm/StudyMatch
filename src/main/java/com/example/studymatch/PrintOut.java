@@ -12,8 +12,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -47,6 +51,31 @@ public class PrintOut implements Initializable,WindowInterface {
         SecondTable.refresh();
         switchScene(event,"login-view.fxml");
     }
+
+    public void onExport(ActionEvent event) throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+        fileChooser.setTitle("Save User List");
+        fileChooser.setInitialFileName("out.txt");
+        File file = fileChooser.showSaveDialog(stage);
+
+        if (file != null) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+                for (User user : finalList) {
+                    writer.write("ID: " + user.getIDNum() + "\n");
+                    writer.write("Name: " + user.getName() + "\n");
+                    writer.write("Course: " + user.getCourseID() + "\n");
+                    writer.write("Lessons: " + user.getLesson() + "\n");
+                    writer.write("Platforms: " + user.getMode() + "\n");
+                    writer.write("Contacts: " + user.getContact() + "\n");
+                    writer.write("\n"); // Add a blank line between users
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     @Override
     public void switchScene(ActionEvent event, String fxmlFile) throws IOException {

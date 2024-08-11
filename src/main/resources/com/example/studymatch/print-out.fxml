@@ -23,7 +23,7 @@
       </TableView>
       <ButtonBar layoutX="450.0" layoutY="386.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
-          <Button mnemonicParsing="false" text="Export" />
+          <Button mnemonicParsing="false" onAction="#onExport" text="Export" />
             <Button mnemonicParsing="false" onAction="#onExit" text="Cancel/Exit" />
         </buttons>
       </ButtonBar>
