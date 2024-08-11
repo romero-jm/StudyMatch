@@ -15,7 +15,8 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-
+        Users user = new Users();
+        user.loadFile("src/main/resources/database.txt");
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 680, 370);
         stage.setScene(scene);

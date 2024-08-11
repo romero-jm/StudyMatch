@@ -33,7 +33,7 @@ public class Users {
                 String contact = details[CONTACT];
                 String image = details[IMAGE];
 
-                User user = new User(iDNum, name, code, lesson, mode, contact, image);
+                User user = new User(iDNum, name, code, lesson, mode, contact);
                 users.add(user);
             }
             text.close();
