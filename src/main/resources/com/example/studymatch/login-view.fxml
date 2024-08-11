@@ -9,24 +9,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="424.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studymatch.LoginView">
+<AnchorPane prefHeight="497.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studymatch.LoginView">
    <children>
-      <TextField fx:id="IDSelect" layoutX="14.0" layoutY="368.0" />
-      <Text layoutX="14.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter ID" />
-      <ButtonBar layoutX="243.0" layoutY="360.0" prefHeight="40.0" prefWidth="339.0">
+      <TextField fx:id="IDSelect" layoutX="15.0" layoutY="432.0" />
+      <Text layoutX="15.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter ID" />
+      <ButtonBar layoutX="441.0" layoutY="425.0" prefHeight="40.0" prefWidth="339.0">
          <buttons>
+            <Button mnemonicParsing="false" onAction="#extBtn" text="Exit" />
             <Button mnemonicParsing="false" text="Add to list" />
             <Button mnemonicParsing="false" text="Remove to List" />
             <Button mnemonicParsing="false" text="Print List" />
          </buttons>
       </ButtonBar>
-      <TableView fx:id="MainTable" layoutX="14.0" layoutY="14.0" prefHeight="326.0" prefWidth="570.0">
+      <TableView fx:id="MainTable" layoutX="14.0" layoutY="14.0" prefHeight="397.0" prefWidth="778.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="profile" prefWidth="75.0" text="Image" />
+          <TableColumn fx:id="idNo" prefWidth="75.0" text="ID Number" />
+            <TableColumn fx:id="fullname" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="coursecode" prefWidth="75.0" text="Course Code" />
+            <TableColumn fx:id="lessons" prefWidth="75.0" text="Lesson" />
+            <TableColumn fx:id="platforms" prefWidth="75.0" text="Platform" />
+            <TableColumn fx:id="chosenContact" prefWidth="75.0" text="Contact" />
         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
-      <Label fx:id="SystemMessage" layoutX="14.0" layoutY="402.0" text="Enter a valid ID number from the list to either add or remove from your list" />
+      <Label fx:id="SystemMessage" layoutX="15.0" layoutY="466.0" text="Enter a valid ID number from the list to either add or remove from your list" />
    </children>
 </AnchorPane>

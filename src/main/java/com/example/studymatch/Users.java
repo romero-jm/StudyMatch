@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Users {
-    public ArrayList<User> users = new ArrayList<>();
+    public static ArrayList<User> users = new ArrayList<>();
 
-    public ArrayList<User> getUsers() {
+    public static ArrayList<User> getUsers() {
         return users;
     }
 
     public void setUsers(ArrayList<User> users) {
-        this.users = users;
+        Users.users = users;
     }
 
     public final int IDNUM = 0, NAME = 1, CODE = 2, LESSON = 3, MODE = 4, CONTACT = 5, IMAGE = 6;

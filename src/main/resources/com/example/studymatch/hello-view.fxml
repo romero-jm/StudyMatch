@@ -30,14 +30,14 @@
       <TextField fx:id="studentNameField" layoutX="53.0" layoutY="127.0" />
       <Text layoutX="53.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Name" />
       <TextField fx:id="CourseCodeField" layoutX="254.0" layoutY="127.0" />
-      <Text layoutX="254.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Code" />
+      <Text layoutX="254.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course Code*" />
       <TextField fx:id="IDNumberField" layoutX="53.0" layoutY="198.0" />
       <Text layoutX="53.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID Number" />
       <TextField fx:id="LessonField" layoutX="254.0" layoutY="199.0" />
       <Text layoutX="254.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lesson" />
       <ButtonBar layoutX="486.0" layoutY="264.0" prefHeight="40.0" prefWidth="181.0">
          <buttons>
-            <Button mnemonicParsing="false" onAction="#switchToLoginView" text="Find" />
+            <Button mnemonicParsing="false" onAction="#switchToLoginView" text="Find*" />
             <Button fx:id="EnlistButton" mnemonicParsing="false" onAction="#enlist" text="Enlist" />
          </buttons>
       </ButtonBar>
@@ -46,5 +46,7 @@
       <Text layoutX="452.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Mode" />
       <TextField fx:id="ContactField" layoutX="452.0" layoutY="199.0" />
       <Text layoutX="452.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact" />
+      <TextField fx:id="ImageField" layoutX="254.0" layoutY="271.0" />
+      <Text layoutX="254.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Image (optional)" />
    </children>
 </AnchorPane>
