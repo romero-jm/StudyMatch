@@ -27,8 +27,6 @@ public class LoginView implements Initializable {
     static ObservableList<User> selected = FXCollections.observableArrayList();
 
     @FXML
-    private TableColumn<User, String> profile;
-    @FXML
     private TableColumn<User, String> idNo;
     @FXML
     private TableColumn<User, String> fullname;

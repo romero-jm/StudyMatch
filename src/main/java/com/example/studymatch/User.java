@@ -7,16 +7,14 @@ public class User {
     String lesson;
     String contact;
     String mode;
-    String image;
 
-    public User(String name, String IDNum, String courseID, String lesson, String mode, String contact, String image) {
+    public User(String name, String IDNum, String courseID, String lesson, String mode, String contact) {
         this.IDNum = name;
         this.name = IDNum;
         this.courseID = courseID;
         this.lesson = lesson;
         this.mode = mode;
         this.contact = contact;
-        this.image = image;
     }
 
     public String getLesson() {
@@ -65,13 +63,5 @@ public class User {
 
     public void setContact(String contact) {
         this.contact = contact;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 }
