@@ -64,4 +64,16 @@ public class User {
     public void setContact(String contact) {
         this.contact = contact;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "IDNum='" + IDNum + '\'' +
+                ", name='" + name + '\'' +
+                ", courseID='" + courseID + '\'' +
+                ", lesson='" + lesson + '\'' +
+                ", contact='" + contact + '\'' +
+                ", mode='" + mode + '\'' +
+                '}';
+    }
 }

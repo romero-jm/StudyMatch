@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -25,6 +26,7 @@ public class LoginView implements Initializable {
 
     private static ArrayList<User> listUsers = Users.getUsers();
     static ObservableList<User> selected = FXCollections.observableArrayList();
+    private ArrayList<User> chosenID = new ArrayList<>();
 
     @FXML
     private TableColumn<User, String> idNo;
@@ -40,6 +42,10 @@ public class LoginView implements Initializable {
     private TableColumn<User, String> chosenContact;
     @FXML
     private TableView<User> MainTable;
+    @FXML
+    private TextField IDSelect;
+    @FXML
+    private Label SystemMessage;
 
     private Scene scene;
     private Stage stage;
@@ -48,7 +54,7 @@ public class LoginView implements Initializable {
         for(User user : listUsers) {
             if(course.contains(user.getCourseID())){
                 selected.add(user);
-                System.out.println("Added "+ user.getName());
+                java.lang.System.out.println("Added "+ user.getName());
             }
         }
     }
@@ -81,5 +87,38 @@ public class LoginView implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void addAll(ActionEvent event) {
+        chosenID.addAll(selected);
+        SystemMessage.setText("Added all "+selected.size()+" students to the print out list.");
+    }
+
+    public void deleteALl(ActionEvent event) {
+        chosenID.removeAll(selected);
+        SystemMessage.setText("Removed all "+selected.size()+" students from the print out list.");
+
+    }
+
+    public void addID(ActionEvent event) {
+        for (User user : selected) {
+            if (IDSelect.getText().contains(user.getIDNum())){
+                chosenID.add(user);
+                SystemMessage.setText("Added " + user.getName() + " in to your print out list.");
+            }
+        }
+    }
+
+    public void removeID(ActionEvent event) {
+        for (User user : selected) {
+            if (IDSelect.getText().contains(user.getIDNum())) {
+                chosenID.remove(user);
+                SystemMessage.setText("Removed " + user.getName() + " from your print out list.");
+            }
+        }
+    }
+    public void printout(ActionEvent event) throws IOException {
+        PrintOut.setData(chosenID);
+        switchScene(event,"print-out.fxml");
     }
 }

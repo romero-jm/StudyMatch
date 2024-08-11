@@ -13,12 +13,14 @@
    <children>
       <TextField fx:id="IDSelect" layoutX="15.0" layoutY="432.0" />
       <Text layoutX="15.0" layoutY="429.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter ID" />
-      <ButtonBar layoutX="441.0" layoutY="425.0" prefHeight="40.0" prefWidth="339.0">
+      <ButtonBar layoutX="271.0" layoutY="425.0" prefHeight="40.0" prefWidth="339.0">
          <buttons>
-            <Button mnemonicParsing="false" onAction="#extBtn" text="Exit" />
-            <Button mnemonicParsing="false" text="Add to list" />
-            <Button mnemonicParsing="false" text="Remove to List" />
-            <Button mnemonicParsing="false" text="Print List" />
+            <Button fx:id="extBtn" mnemonicParsing="false" onAction="#extBtn" text="Exit" />
+            <Button fx:id="add" mnemonicParsing="false" onAction="#addID" text="Add to list" />
+            <Button fx:id="delete" mnemonicParsing="false" onAction="#removeID" text="Delete" />
+            <Button fx:id="print" mnemonicParsing="false" onAction="#printout" text="Print List" />
+            <Button mnemonicParsing="false" onAction="#addAll" text="Add All" />
+            <Button fx:id="deleteAll" mnemonicParsing="false" onAction="#deleteALl" text="Delete All" />
          </buttons>
       </ButtonBar>
       <TableView fx:id="MainTable" layoutX="14.0" layoutY="14.0" prefHeight="397.0" prefWidth="778.0">

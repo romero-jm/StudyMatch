@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -16,14 +17,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class HelloController {
     Users users = new Users();
-    public HelloController() {
-
-        users.loadFile("src/main/resources/database.txt");
-    }
-
 
     @FXML
     public TextField studentNameField;
@@ -37,8 +34,6 @@ public class HelloController {
     public TextField ModeField;
     @FXML
     public TextField ContactField;
-    @FXML
-    public TextField ImageField;
     @FXML
     public Label Message;
 
@@ -110,19 +105,26 @@ public class HelloController {
         return ModeField.getText().trim();
     }
 
-    private String getImageField() {
-        return ImageField.getText().trim();
-        // TODO: Create a fail-safe (default) if no image is inputted
-    }
-
     @FXML
     private void enlist(ActionEvent event) throws IOException {
-        Message.setText(getStudentName()+" enlisted");
-        User user = new User(getIdNum(), getStudentName(), getCourseCode(), getLesson(), getModeField(), getContactField(), getImageField());
-        users.addUser(user);
-        users.printId();//test
-        openEnlistedView();
+        if (studentNameField.getText().isEmpty() ||
+                CourseCodeField.getText().isEmpty() ||
+                IDNumberField.getText().isEmpty() ||
+                LessonField.getText().isEmpty() ||
+                ModeField.getText().isEmpty() ||
+                ContactField.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("DLSU SystemMatch");
+            alert.setHeaderText("Incomplete Information");
+            alert.setContentText("Make sure all fields are filled.");
+            alert.show();
+        }
+        else {
+            Message.setText(getStudentName()+" enlisted");
+            User user = new User(getIdNum(), getStudentName(), getCourseCode(), getLesson(), getModeField(), getContactField());
+            users.addUser(user);
+            users.printId();//test
 
-
+        }
     }
 }
